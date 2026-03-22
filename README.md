@@ -92,3 +92,4 @@ Interested in AI for Drug Discovery
 
 <img width="562" height="455" alt="Binding Afinity" src="https://github.com/user-attachments/assets/5ad28a8d-c4e0-48ee-b8ea-46745bb579c5" />
 
+<img width="567" height="455" alt="ROC Curve" src="https://github.com/user-attachments/assets/38596683-80f5-45ae-9613-6fbcf00c80a5" />

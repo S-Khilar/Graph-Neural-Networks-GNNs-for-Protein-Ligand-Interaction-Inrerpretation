@@ -14,7 +14,7 @@ from graph_utils import protein_to_graph, mol_to_graph
 
 st.set_page_config(
     page_title="GNN-PLIP | Protein-Ligand Interaction Predictor",
-    page_icon="🧬",
+    page_icon="🔬",
     layout="centered"
 )
 
@@ -121,7 +121,7 @@ st.markdown("""
     z-index: 0;
 
     animation:
-        floatNode 8s ease-in-out infinite;
+        floatNode 5s ease-in-out infinite;
 }
 
 
@@ -145,7 +145,7 @@ st.markdown("""
 .node4 {
     top: 80%;
     right: 15%;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
 }
 
 
@@ -227,7 +227,7 @@ st.markdown("""
     margin-bottom:5px;
     letter-spacing:2px;
 ">
-🧬 GNN-PLIP
+🔬 GNN-PLIP
 </h1>
 
 <h3 style="
@@ -251,18 +251,17 @@ AI-powered prediction of pKd, pKi and binding affinity
 Research application based on Graph Neural Networks
 </p>
 
+<p style="
+    font-size:10px;
+    opacity:0.45;
+">
+Developed by Subhasankar Khilar
+</p>
 </div>
 """, unsafe_allow_html=True)
 
 
-
-st.markdown("**AI-powered prediction of pKd, pKi and Binding Affinity**")
-st.markdown(
-    "<p style='font-size:9px; color:green;'>By Subhasankar Khilar</p>",
-    unsafe_allow_html=True
-)
 st.markdown("<br><br>", unsafe_allow_html=True)
-
 
 device = torch.device("cpu")
 

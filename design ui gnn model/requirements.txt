@@ -1,7 +1,0 @@
-fastapi
-uvicorn
-torch
-torch-geometric
-rdkit
-biopython
-numpy

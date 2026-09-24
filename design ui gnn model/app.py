@@ -8,6 +8,16 @@ from model import ProteinLigandGNN
 from graph_utils import protein_to_graph, mol_to_graph
 
 
+# =========================================================
+# Page Configuration — MUST COME FIRST
+# =========================================================
+
+st.set_page_config(
+    page_title="GNN-PLIP | Protein-Ligand Interaction Predictor",
+    page_icon="🧬",
+    layout="centered"
+)
+
 
 # =========================================================
 # GNN-PLIP — Animated Scientific Background
@@ -18,45 +28,86 @@ st.markdown("""
 
 .stApp {
     background:
-        radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.12), transparent 30%),
-        radial-gradient(circle at 85% 15%, rgba(120, 70, 255, 0.12), transparent 30%),
-        radial-gradient(circle at 70% 85%, rgba(0, 220, 180, 0.08), transparent 30%),
-        linear-gradient(135deg, #050816 0%, #08111f 45%, #050816 100%);
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(0, 180, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(120, 70, 255, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 70% 85%,
+            rgba(0, 220, 180, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050816 0%,
+            #08111f 45%,
+            #050816 100%
+        );
 }
 
+
 /* Animated scientific grid */
+
 .stApp::before {
+
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     pointer-events: none;
+
     z-index: 0;
 
     background-image:
-        linear-gradient(rgba(80,180,255,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(80,180,255,0.035) 1px, transparent 1px);
+        linear-gradient(
+            rgba(80,180,255,0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(80,180,255,0.035) 1px,
+            transparent 1px
+        );
 
     background-size: 45px 45px;
 
     animation: gridMove 20s linear infinite;
 }
 
+
 @keyframes gridMove {
+
     from {
-        transform: translate(0,0);
+        transform: translate(0, 0);
     }
 
     to {
-        transform: translate(45px,45px);
+        transform: translate(45px, 45px);
     }
+
 }
 
-/* Floating glowing molecular nodes */
+
+/* Floating molecular nodes */
+
 .gnn-node {
+
     position: fixed;
+
     width: 7px;
+
     height: 7px;
+
     border-radius: 50%;
+
     background: #5ee7ff;
 
     box-shadow:
@@ -66,10 +117,13 @@ st.markdown("""
     opacity: 0.7;
 
     pointer-events: none;
+
     z-index: 0;
 
-    animation: floatNode 8s ease-in-out infinite;
+    animation:
+        floatNode 8s ease-in-out infinite;
 }
+
 
 .node1 {
     top: 18%;
@@ -94,20 +148,24 @@ st.markdown("""
     animation-delay: 1s;
 }
 
+
 @keyframes floatNode {
 
     0%, 100% {
-        transform: translate(0,0);
+        transform: translate(0, 0);
         opacity: 0.35;
     }
 
     50% {
-        transform: translate(20px,-25px);
+        transform: translate(20px, -25px);
         opacity: 0.9;
     }
+
 }
 
+
 /* Keep Streamlit content above background */
+
 [data-testid="stAppViewContainer"] {
     position: relative;
     z-index: 1;
@@ -117,7 +175,30 @@ st.markdown("""
     background: transparent;
 }
 
+/* Glassmorphism cards */
+
+.gnn-card {
+    background: rgba(15, 25, 45, 0.72);
+
+    border: 1px solid rgba(100, 200, 255, 0.18);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    backdrop-filter: blur(14px);
+
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
 </style>
+
 
 <div class="gnn-node node1"></div>
 <div class="gnn-node node2"></div>
@@ -132,11 +213,6 @@ st.markdown("""
 # ------------------------
 # Page Configuration
 # ------------------------
-st.set_page_config(
-    page_title="Protein–Ligand GNN Predictor",
-    page_icon="🔬",
-    layout="centered"
-)
 
 
 st.markdown("""
@@ -386,20 +462,3 @@ if st.button("🚀 Predict"):
     except Exception as e:
      st.error(f"Error occurred: {str(e)}")
  #this is end
-
-
-
-.gnn-card {
-    background: rgba(15, 25, 45, 0.72);
-    border: 1px solid rgba(100, 200, 255, 0.18);
-    border-radius: 18px;
-    padding: 25px;
-    margin: 20px 0;
-
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,0.35),
-        inset 0 1px 0 rgba(255,255,255,0.05);
-}

@@ -30,12 +30,12 @@ st.markdown("""
     background:
         radial-gradient(
             circle at 10% 20%,
-            rgba(0, 210, 255, 0.18),
+            rgb(255, 247, 14),
             transparent 32%
         ),
         radial-gradient(
             circle at 85% 15%,
-            rgba(140, 80, 255, 0.18),
+            rgb(233, 80, 255),
             transparent 32%
         ),
         radial-gradient(

@@ -148,6 +148,12 @@ st.markdown("""
     animation-delay: 0.5s;
 }
 
+.node5 {
+    top: 70%;
+    left: 12%;
+    animation-delay: 0.1s;
+}
+
 
 @keyframes floatNode {
 

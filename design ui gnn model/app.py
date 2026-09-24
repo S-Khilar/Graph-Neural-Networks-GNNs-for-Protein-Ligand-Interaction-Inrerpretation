@@ -29,28 +29,32 @@ st.markdown("""
 .stApp {
     background:
         radial-gradient(
-            circle at 5% 15%,
-            rgba(0, 229, 255, 0.14),
+            circle at 10% 20%,
+            rgba(0, 210, 255, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(140, 80, 255, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 75% 80%,
+            rgba(0, 255, 200, 0.12),
             transparent 30%
         ),
         radial-gradient(
-            circle at 95% 10%,
-            rgba(99, 102, 241, 0.16),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 90%,
-            rgba(16, 185, 129, 0.10),
-            transparent 28%
+            circle at 40% 55%,
+            rgba(255, 0, 170, 0.07),
+            transparent 35%
         ),
         linear-gradient(
             135deg,
             #020617 0%,
-            #081426 50%,
+            #07152b 45%,
             #030712 100%
         );
 }
-
 
 /* Animated scientific grid */
 

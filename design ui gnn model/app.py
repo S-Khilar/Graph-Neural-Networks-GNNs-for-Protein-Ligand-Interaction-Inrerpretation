@@ -17,7 +17,8 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🔬 Protein–Ligand Binding Affinity Predictor")
+st.title("🔬 GNN-PLIP")
+st.subheader("Graph Neural Network–Based Protein-Ligand Interaction Predictor")
 st.markdown("**AI-powered prediction of pKd, pKi and Binding Affinity**")
 st.markdown(
     "<p style='font-size:9px; color:green;'>By Subhasankar Khilar</p>",

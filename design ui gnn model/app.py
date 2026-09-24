@@ -29,25 +29,25 @@ st.markdown("""
 .stApp {
     background:
         radial-gradient(
-            circle at 10% 20%,
-            rgba(0, 180, 255, 0.12),
+            circle at 5% 15%,
+            rgba(0, 229, 255, 0.14),
             transparent 30%
         ),
         radial-gradient(
-            circle at 85% 15%,
-            rgba(120, 70, 255, 0.12),
+            circle at 95% 10%,
+            rgba(99, 102, 241, 0.16),
             transparent 30%
         ),
         radial-gradient(
-            circle at 70% 85%,
-            rgba(0, 220, 180, 0.08),
-            transparent 30%
+            circle at 80% 90%,
+            rgba(16, 185, 129, 0.10),
+            transparent 28%
         ),
         linear-gradient(
             135deg,
-            #050816 0%,
-            #08111f 45%,
-            #050816 100%
+            #020617 0%,
+            #081426 50%,
+            #030712 100%
         );
 }
 
@@ -267,7 +267,7 @@ Developed by Subhasankar Khilar
 """, unsafe_allow_html=True)
 
 
-st.markdown("<br><br>", unsafe_allow_html=True)
+st.markdown("<br>", unsafe_allow_html=True)
 
 device = torch.device("cpu")
 

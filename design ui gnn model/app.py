@@ -8,6 +8,127 @@ from model import ProteinLigandGNN
 from graph_utils import protein_to_graph, mol_to_graph
 
 
+
+# =========================================================
+# GNN-PLIP — Animated Scientific Background
+# =========================================================
+
+st.markdown("""
+<style>
+
+.stApp {
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 85% 15%, rgba(120, 70, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 70% 85%, rgba(0, 220, 180, 0.08), transparent 30%),
+        linear-gradient(135deg, #050816 0%, #08111f 45%, #050816 100%);
+}
+
+/* Animated scientific grid */
+.stApp::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    background-image:
+        linear-gradient(rgba(80,180,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(80,180,255,0.035) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(45px,45px);
+    }
+}
+
+/* Floating glowing molecular nodes */
+.gnn-node {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #5ee7ff;
+
+    box-shadow:
+        0 0 10px #5ee7ff,
+        0 0 25px rgba(94,231,255,0.6);
+
+    opacity: 0.7;
+
+    pointer-events: none;
+    z-index: 0;
+
+    animation: floatNode 8s ease-in-out infinite;
+}
+
+.node1 {
+    top: 18%;
+    left: 8%;
+}
+
+.node2 {
+    top: 35%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.node3 {
+    top: 70%;
+    left: 12%;
+    animation-delay: 4s;
+}
+
+.node4 {
+    top: 80%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+@keyframes floatNode {
+
+    0%, 100% {
+        transform: translate(0,0);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate(20px,-25px);
+        opacity: 0.9;
+    }
+}
+
+/* Keep Streamlit content above background */
+[data-testid="stAppViewContainer"] {
+    position: relative;
+    z-index: 1;
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+</style>
+
+<div class="gnn-node node1"></div>
+<div class="gnn-node node2"></div>
+<div class="gnn-node node3"></div>
+<div class="gnn-node node4"></div>
+
+""", unsafe_allow_html=True)
+
+
+
+
 # ------------------------
 # Page Configuration
 # ------------------------
@@ -17,8 +138,48 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("🔬 GNN-PLIP")
-st.subheader("Graph Neural Network–Based Protein-Ligand Interaction Predictor")
+
+st.markdown("""
+<div style="
+    text-align:center;
+    padding:35px 10px 25px 10px;
+">
+
+<h1 style="
+    font-size:52px;
+    font-weight:800;
+    margin-bottom:5px;
+    letter-spacing:2px;
+">
+🧬 GNN-PLIP
+</h1>
+
+<h3 style="
+    font-weight:400;
+    opacity:0.85;
+">
+Graph Neural Network–Based Protein-Ligand Interaction Predictor
+</h3>
+
+<p style="
+    font-size:16px;
+    opacity:0.65;
+">
+AI-powered prediction of pKd, pKi and binding affinity
+</p>
+
+<p style="
+    font-size:13px;
+    opacity:0.55;
+">
+Research application based on Graph Neural Networks
+</p>
+
+</div>
+""", unsafe_allow_html=True)
+
+
+
 st.markdown("**AI-powered prediction of pKd, pKi and Binding Affinity**")
 st.markdown(
     "<p style='font-size:9px; color:green;'>By Subhasankar Khilar</p>",
@@ -225,3 +386,20 @@ if st.button("🚀 Predict"):
     except Exception as e:
      st.error(f"Error occurred: {str(e)}")
  #this is end
+
+
+
+.gnn-card {
+    background: rgba(15, 25, 45, 0.72);
+    border: 1px solid rgba(100, 200, 255, 0.18);
+    border-radius: 18px;
+    padding: 25px;
+    margin: 20px 0;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
